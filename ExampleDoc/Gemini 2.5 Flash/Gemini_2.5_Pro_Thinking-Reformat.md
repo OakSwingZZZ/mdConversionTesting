@@ -1,5 +1,3 @@
-Here's the reformatted Markdown file:
-
 ```markdown
 # 1 Introduction
 
