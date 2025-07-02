@@ -79,7 +79,7 @@ ___
 **Solution 2:**
 
 | Model | Result | Accuracy | Formatting | Notes |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| ------------- | ------------- | ------------- | ------------- | ------------- | 
 | ChatGPT | [file](ExampleDoc/CHATGPT/ChatGPT-Only.md) | Lost a lot of information and data, especially at the end; Modified some words and grammar. | Extremely good formatting of code | Omitted the entirety of section 5, which was arguably unimportant |
 | Gemini 2.0 Flash | [file](ExampleDoc/Gemini%202.0%20Flash/Gemini_2.0_Flash-Only.md) | Most of the information is present | Formatting comparable to algorithmically, confusing and difficult to read/understand | Extremely fast | 
 | Gemini 2.5 Flash | [file](ExampleDoc/Gemini%202.5%20Flash/Gemini_2.5_Flash_Thinking-Only.md) | Almost all of the information is present | Bad code formatting; Code formatting includes markdown information; Bad formatting in general |  Thinking Mode |
@@ -89,7 +89,7 @@ ___
 **Solution 3:**
 
 | Model | Result | Accuracy | Formatting | Notes |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| ------------- | ------------- | ------------- | ------------- | ------------- | 
 | ChatGPT | [file](ExampleDoc/CHATGPT/ChatGPT-Reformat.md) | Some information was altered to change grammar or omit unnecessary words. | Extremely good formatting of code (again); Formatting better than the original | - |
 | Gemini 2.0 Flash | [file](ExampleDoc/Gemini%202.0%20Flash/Gemini_2.0_Flash-Reformat.md) | All information present | Formatting is bad, weird use of code blocks; confusing, and difficult to read/understand | Extremely fast (again) | 
 | Gemini 2.5 Flash | [file](ExampleDoc/Gemini%202.5%20Flash/Gemini_2.5_Flash_Thinking-Reformat.md) | Almost all of the information is present | Bad formatting in general, weird use of code blocks; Code formatting includes markdown information; |  Thinking Mode |
