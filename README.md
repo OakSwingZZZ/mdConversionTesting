@@ -1,10 +1,39 @@
 # XrootD Documentation Conversion to MD testing
-This repository shows analysis and data on the performance of different LLMs when converting raw XrootD documentation. 
-
-**The problems:** 
-- This
+This repository presents an analysis and data on the performance of various LLMs when converting raw XrootD documentation. 
 
 ___
-## Methodology:
+## Potential Conversion Solutions: 
+
+**1. Programatically *(Algorithmically)*:**
+- Benefits:
+  - Zero data loss
+  - Extremely fast
+- Issues:
+  - Poor formatting (inconsistent spacing, text disjointed, and hard to read/interpret)
+  - The algorithmic conversion can sometimes lead to artifacts.
+
+**2. Using LLM's *(AI)*:**
+- Benefits:
+  - Good formatting (sometimes better looking than the real document)
+  - Most likely able to be understood and in a format that LLMs can read
+- Issues:
+  - Extremely Inconsistent
+  - Potentially large data loss
+  - The optimal model needs to be chosen
+
+**3. Using a combination of LLMs and algorithms:**
+- Method: First, running it through an algorithm, then having LLMs reformat its output
+- Benefits:
+  - By first running it through an algorithm before prompting an LLM with the file, it reduces the effort to convert it. Instead of converting from HTML to Markdown, the LLM is only fixing a given Markdown file that has all the information.
+  - Much less data loss when compared to regular LLM conversions (HTML -> Markdown)
+  - Much better formatting when compared to the output of an algorithm (almost comparable to the regular LLM output)
+  - Created by LLMs, meaning they should be able to understand it
+- Issues:
+  - Two steps required
+  - Data loss still happens
+  - The model still needs to be chosen
+
+___
+## Testing:
 
 
