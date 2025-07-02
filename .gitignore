@@ -1,2 +1,7 @@
 gemini_api_key.txt
 ExampleMCP/gemini_api_key.txt
+__pycache__/
+*.pyc
+.vscode/
+.vscode
+__pycache__
