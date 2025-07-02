@@ -23,6 +23,8 @@ ___
   - Potentially large data loss
   - The optimal model needs to be chosen
 - [Example from ChatGPT](ExampleDoc/CHATGPT/ChatGPT-Only.md)
+  - Demonstrates significant data loss
+- [Example from Gemma 27B]
 
 **3. Using a combination of LLMs and algorithms:**
 - Method: First, running it through an algorithm, then having LLMs reformat its output
@@ -35,7 +37,7 @@ ___
   - Two steps required
   - Data loss still happens
   - The model still needs to be chosen
-- [Example](ExampleDoc/Gemini 2.0 Flash/ )
+- [Example](ExampleDoc/Gemini%202.5%20Pro/Gemini_2.5_Pro_Thinking-Only.md) using this [script](scripts/convert.py) and Gemini 2.5 Pro
 
 ___
 ## Testing:
