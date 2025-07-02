@@ -67,7 +67,36 @@ The second prompt ***"HTML -> Markdown"*** [(solution 3)](#sol-3):
 > 
 > Prompt: "I would like you to fix another version of a markdown file. I have uploaded the file. Please reformat the markdown file to the best of your ability."
 
+___
+## Results:
 
+**Solution 1:**
 
+| Algorithm | Result | Notes |
+| ------------- | ------------- | ------------- |
+| [This Python Script](scripts/convert.py) | [Algorithmic.md](ExampleDoc/Algorithmic.md) | Extremely accurate, almost unreadable in plaintext, and difficult to understand in markdown |
+
+**Solution 2:**
+
+| Model | Result | Accuracy | Formatting | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| ChatGPT | [file](ExampleDoc/CHATGPT/ChatGPT-Only.md) | Lost a lot of information and data, especially at the end; Modified some words and grammar. | Extremely good formatting of code | Omitted the entirety of section 5, which was arguably unimportant |
+| Gemini 2.0 Flash | [file](ExampleDoc/Gemini%202.0%20Flash/Gemini_2.0_Flash-Only.md) | Most of the information is present | Formatting comparable to algorithmically, confusing and difficult to read/understand | Extremely fast | 
+| Gemini 2.5 Flash | [file](ExampleDoc/Gemini%202.5%20Flash/Gemini_2.5_Flash_Thinking-Only.md) | Almost all of the information is present | Bad code formatting; Code formatting includes markdown information; Bad formatting in general |  Thinking Mode |
+| Gemini 2.5 Pro | [file](ExampleDoc/Gemini%202.5%20Pro/Gemini_2.5_Pro_Thinking-Only.md) | All the information is present | Good formatting besides table of contents. |  Thinking Mode |
+| Gemini 3 27B | [file](ExampleDoc/Gemma%203%2027B/gemma_3_27b_it-Only.md) | **ALL** of the information is present!! (except table of contents) | Extremely accurate formatting. Almost identical to regular. | **Took OVER 900 seconds to generate** |
+
+**Solution 3:**
+
+| Model | Result | Accuracy | Formatting | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| ChatGPT | [file](ExampleDoc/CHATGPT/ChatGPT-Reformat.md) | Some information was altered to change grammar or omit unnecessary words. | Extremely good formatting of code (again); Formatting better than the original | - |
+| Gemini 2.0 Flash | [file](ExampleDoc/Gemini%202.0%20Flash/Gemini_2.0_Flash-Reformat.md) | All information present | Formatting is bad, weird use of code blocks; confusing, and difficult to read/understand | Extremely fast (again) | 
+| Gemini 2.5 Flash | [file](ExampleDoc/Gemini%202.5%20Flash/Gemini_2.5_Flash_Thinking-Reformat.md) | Almost all of the information is present | Bad formatting in general, weird use of code blocks; Code formatting includes markdown information; |  Thinking Mode |
+| Gemini 2.5 Pro | [file](ExampleDoc/Gemini%202.5%20Pro/Gemini_2.5_Pro_Thinking-Reformat.md) | All the information is present again | Good formatting besides the table of contents ...again. |  Thinking Mode |
+| Gemini 3 27B | [file](ExampleDoc/Gemma%203%2027B/gemma_3_27b_it-Reformat.md) | All of the information is present!! (except table of contents ... again) | Horrible formatting, similar to both flash models. | **Also took OVER 900 seconds to generate ... AGAIN** |
+
+____
+Please give your opinions on which you prefer, add your own models, and contribute in any way you see fit!
 
 
