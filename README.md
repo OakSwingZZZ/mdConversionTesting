@@ -5,6 +5,10 @@ This repository provides an analysis and data on the performance of various LLMs
 > All testing was done on the second XrootD documentation that was available on the documentation website. A link is available to the original [here](https://xrootd.web.cern.ch/doc/dev55/Syntax_config.htm).
 > However, this page was modified to remove the redundant and unnecessary first section that included logos, licensing information, and other details. The modified code can be found [here](ExampleDoc/file.html).
 
+**Guide to repository:**
+- `ExamplesDoc` contains all the generated results and the original file.
+- `ExampleMPC` contains my *bad* code for an MPC file server taking advantage of a helpful NPM library. *Requires NPM*.
+- `scripts` contains the one Python script so far.
 ___
 ## Potential Conversion Solutions: 
 
