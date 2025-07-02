@@ -1,0 +1,1394 @@
+<body lang="EN-US" link="blue" vlink="purple" data-new-gr-c-s-check-loaded="14.1242.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1242.0">
+
+
+
+
+
+<div class="WordSection2">
+
+<p class="MsoNormal" align="center" style="text-align:center"><span class="MsoHyperlink"><span style="color:windowtext;text-decoration:none">&nbsp;</span></span></p>
+
+<p class="MsoToc1"><a href="#_Toc520499862">1<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;font-weight:normal;
+text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Introduction<span style="color:windowtext;
+display:none;text-decoration:none">.. </span><span style="color:windowtext;display:none;text-decoration:none">5</span></a></p>
+
+<p class="MsoToc1"><a href="#_Toc520499863">2<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;font-weight:normal;
+text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Specifying Conditional Directives<span style="color:windowtext;display:none;text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">7</span></a></p>
+
+<p class="MsoToc1"><a href="#_Toc520499864">3<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;font-weight:normal;
+text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Configuration File Continuation<span style="color:windowtext;display:none;text-decoration:none">.. </span><span style="color:windowtext;display:none;text-decoration:none">11</span></a></p>
+
+<p class="MsoToc1"><a href="#_Toc520499865">4<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;font-weight:normal;
+text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Using set Variables<span style="color:windowtext;
+display:none;text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">13</span></a></p>
+
+<p class="MsoToc2"><a href="#_Toc520499866">4.1<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Assigning
+Variable Values<span style="color:windowtext;display:none;text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">13</span></a></p>
+
+<p class="MsoToc2"><a href="#_Toc520499867">4.2<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Substituting
+Variables<span style="color:windowtext;display:none;text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">15</span></a></p>
+
+<p class="MsoToc2"><a href="#_Toc520499868">4.3<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Specifying
+set Options<span style="color:windowtext;display:none;text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">17</span></a></p>
+
+<p class="MsoToc2"><a href="#_Toc520499869">4.4<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Assigning
+Environmental Variable Values<span style="color:windowtext;display:none;
+text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">18</span></a></p>
+
+<p class="MsoToc1"><a href="#_Toc520499870">5<span style="font-size:11.0pt;
+font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:windowtext;font-weight:normal;
+text-decoration:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Document Change History<span style="color:windowtext;display:none;text-decoration:none">. </span><span style="color:windowtext;display:none;text-decoration:none">21</span></a></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+<span style="font-size:12.0pt;font-family:&quot;Times&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:right">
+</span>
+
+<div class="WordSection3">
+
+<h1><a name="_Toc520499862"></a><a name="_Toc98765629">1<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</a></h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><span class="StylePalatino">This document describes the syntax
+used in the configuration file for </span><span class="StylePalatinoBold">xrootd</span><span class="StylePalatino">, </span><span class="StylePalatinoBold">cmsd, </span><span class="StylePalatinoBold"><span style="font-weight:normal">and all other related
+components</span></span><span class="StylePalatino"><b>.</b> &nbsp;Refer to the
+respective configuration documents on directive details.</span></p>
+
+<p class="MsoNormal" style="margin-left:.25in"><span style="font-family:&quot;Palatino&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatino">All configuration directives start
+with a prefix identifying the system component to which the directive applies. The
+prefix is separated by the actual directive keyword by a single period. This
+allows configuration of all aspects of a system using a single configuration
+file. The following table lists valid prefixes</span></p>
+
+<p class="MsoHeader"><span style="font-family:&quot;Palatino&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="StylePalatinoBoldCentered">Prefix</p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="StylePalatinoBoldCentered">System Component</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">acc</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">Acc</span><span class="StylePalatino">ess control (i.e., authorization)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">cms</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">C</span><span class="StylePalatino">luster </span><span class="StylePalatinoBold">M</span><span class="StylePalatino">anagement </span><span class="StylePalatinoBold">S</span><span class="StylePalatino">ervices</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">dig</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold"><span style="font-weight:
+  normal">The </span>digFS</span><span class="StylePalatinoBold"><span style="font-weight:normal"> built-in file system</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">frm</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">F</span><span class="StylePalatinoBold"><span style="font-weight:normal">ile </span>R</span><span class="StylePalatinoBold"><span style="font-weight:normal">esidency </span>M</span><span class="StylePalatinoBold"><span style="font-weight:normal">anager</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">http</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold"><span style="font-weight:
+  normal">HTTP protocol plug-in.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">ofs</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">O</span><span class="StylePalatino">pen </span><span class="StylePalatinoBold">f</span><span class="StylePalatino">ile </span><span class="StylePalatinoBold">s</span><span class="StylePalatino">ystem coordinating </span><span class="StylePalatinoBold">acc</span><span class="StylePalatino">, </span><span class="StylePalatinoBold">cms</span><span class="StylePalatino"> &amp; </span><span class="StylePalatinoBold">oss</span><span class="StylePalatino"> components</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">oss</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader"><b><span style="font-family:&quot;Palatino&quot;,&quot;serif&quot;">O</span></b><span style="font-family:&quot;Palatino&quot;,&quot;serif&quot;">pen <b>s</b>torage <b>s</b>ystem
+  (i.e., file system implementation)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">pfc</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">P</span><span class="StylePalatinoBold"><span style="font-weight:normal">roxy</span> F</span><span class="StylePalatinoBold"><span style="font-weight:normal">ile</span> C</span><span class="StylePalatinoBold"><span style="font-weight:normal">ache plug-in</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">pss</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">P</span><span class="StylePalatinoBold"><span style="font-weight:normal">roxy </span>S</span><span class="StylePalatinoBold"><span style="font-weight:normal">torage </span>S</span><span class="StylePalatinoBold"><span style="font-weight:normal">ervice plug-in</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">sec</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatinoBold">Sec</span><span class="StylePalatino">urity authentication </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;background:white;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">xrd</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatino">E</span><span class="StylePalatinoBold">x</span><span class="StylePalatino">tended </span><span class="StylePalatinoBold">R</span><span class="StylePalatino">equest </span><span class="StylePalatinoBold">D</span><span class="StylePalatino">aemon</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;background:white;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">xrootd</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatino">The </span><span class="StylePalatinoBold">xrootd</span><span class="StylePalatino"> protocol
+  implementation.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" valign="top" style="width:23.58%;border:solid windowtext 1.0pt;
+  border-top:none;background:white;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoHeader" align="center" style="text-align:center"><b><span style="font-family:&quot;Courier New&quot;">all</span></b></p>
+  </td>
+  <td width="76%" valign="top" style="width:76.42%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span class="StylePalatino">Applies the directive to all of
+  the above components.</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoItalic">Records that do not start
+with a recognized identifier are ignored</span><span class="StylePalatino">. This
+includes blank record, comment lines (i.e., lines starting with a pound sign,
+#), and prefixes not immediately followed by a single period. Because each
+component has a unique prefix, a common configuration file can be used for the
+whole system. </span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">The
+location of the configuration file is specified on the command line. Refer to
+the reference manuals for each component on how it locates the configuration
+files.<a name="_Toc105418764"></a></span></p>
+
+<p class="MsoNormal"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatino">This guide documents the basic
+directive syntax and describes the use of conditional statements and set
+variables within the configuration file.</span></p>
+
+</div>
+
+<span style="font-size:12.0pt;font-family:&quot;Times&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:right">
+</span>
+
+<div class="WordSection4">
+
+<h1><a name="_Toc520499863">2<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Specifying Conditional Directives</a></h1>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<p class="MsoNormal" style="text-autospace:none"><span class="StylePalatino">The </span><span class="StylePalatinoBold">if</span><span class="StylePalatino">-</span><span class="StylePalatinoBold">fi</span><span class="StylePalatino"> directives are used
+to allow you to optionally include directives based on </span></p>
+
+<p class="MsoNormal"><span class="StylePalatino">host and instance name. The syntax
+for this directive pair is:</span></p>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in">&nbsp;</p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><b><span style="font-size:12.0pt">&nbsp; if</span></b><span style="font-size:12.0pt"> [ <i>hostpat</i>
+[. . .] ] [ <i>conds</i> ]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="border:none;padding:0in"><span style="font-size:
+12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ <i>directives when </i>if<i> is <u>true</u></i> ]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">[ <b>else if</b> [ <i>hostpat</i> [. . .] ] [ <i>conds</i>
+]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><b><span style="font-size:12.0pt">&nbsp;</span></b></p>
+
+<p class="MsoPlainText" style="border:none;padding:0in"><span style="font-size:
+12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ <i>directives when all previous</i> if’s<i> are <u>false</u></i>
+</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>and this </i>if &nbsp;&nbsp;<i>is &nbsp;<u>true</u></i>
+]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">●</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">●&nbsp;&nbsp;&nbsp; [ <i>additional</i> “<b>else</b> <b>if</b>”
+<i>clauses, as desired</i> ]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">●</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">[ <b>else</b></span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><b><span style="font-size:12.0pt">&nbsp;</span></b></p>
+
+<p class="MsoPlainText" style="border:none;padding:0in"><span style="font-size:
+12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [<i>directives when all previous </i>if’s<i> are <u>false</u></i>
+]</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">]</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><b><span style="font-size:12.0pt">&nbsp; fi</span></b></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><i><span style="font-size:12.0pt">hostpat</span></i><span style="font-size:12.0pt">: <i>host</i>
+| <i>host</i><b>+</b> | <i>pfx</i><b>*</b> | <b>*</b><i>sfx</i> | <i>pfx</i><b>*</b><i>sfx</i>]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><i><span style="font-size:12.0pt">conds</span></i><span style="font-size:12.0pt">:&nbsp;&nbsp; <i>cond1</i>
+| <i>cond2 </i>|<i> cond3</i></span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><i><span style="font-size:12.0pt">cond1</span></i><span style="font-size:12.0pt">:&nbsp;&nbsp; <b>defined</b>
+<i>var</i> [. . .] [<b>&amp;&amp;</b> {<i>cond1</i> | <i>cond2 </i>|<i> cond3</i>}]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><i><span style="font-size:12.0pt">cond2</span></i><span style="font-size:12.0pt">:&nbsp;&nbsp; <b>exec</b>
+<i>pgm</i> [. . .] [<b>&amp;&amp;</b> <i>cond3</i>]</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><i><span style="font-size:12.0pt">cond3</span></i><span style="font-size:12.0pt">:&nbsp;&nbsp; <b>named</b>
+<i>name</i> [. . .]</span></p>
+
+<p class="MsoPlainText" style="border:none;padding:0in"><span style="font-size:
+12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:.3in;border:none;padding:0in"><i><span style="font-size:12.0pt">var</span></i><span style="font-size:12.0pt">:&nbsp; <b>?</b><i>varname
+| </i><b>?~</b><i>varname</i></span></p>
+
+<p class="MsoPlainText" style="border:none;padding:0in">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Function</span></p>
+
+<p class="StylePalatinoFirstline05">Specify the conditions under which subsequent
+directives are to be used.</p>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<span class="StyleBold"><span style="font-size:12.0pt"><br clear="all" style="page-break-before:always">
+</span></span>
+
+<p class="MsoNormal"><span class="StyleBold">Parameters</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoItalic">hostpat</span></p>
+
+<p class="MsoBodyTextIndent2">The pattern of the host to which subsequent
+directive applies. All non-applicable hosts ignore all directives until the
+next <b>else</b> or <span class="StyleBodyTextIndent2BoldChar">fi</span>. Host
+patterns are:</p>
+
+<p class="StyleBodyTextIndent2Left05Hanging063"><span class="StyleBodyTextIndent2ItalicChar">host</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any host that matches
+the specified <span class="StyleBodyTextIndent2BoldChar">DNS</span> name.</p>
+
+<p class="StyleBodyTextIndent2Left05Hanging063"><span class="StyleBodyTextIndent2ItalicChar">host</span><span class="StyleBodyTextIndent2BoldChar">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any host that has an address
+that matches any of the addresses assigned to host.</p>
+
+<p class="StyleBodyTextIndent2Left05Hanging063"><span class="StyleBodyTextIndent2ItalicChar">pfx</span><span class="StyleBodyTextIndent2BoldChar">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any host starting with <span class="StyleBodyTextIndent2ItalicChar">pfx</span>.</p>
+
+<p class="StyleBodyTextIndent2Left05Hanging063"><span class="StyleBodyTextIndent2BoldChar">*</span><span class="StyleBodyTextIndent2ItalicChar">sfx</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any host ending with <span class="StyleBodyTextIndent2ItalicChar">sfx</span>.</p>
+
+<p class="StyleBodyTextIndent2Left05Hanging063"><span class="StyleBodyTextIndent2ItalicChar">pfx</span><span class="StyleBodyTextIndent2BoldChar">*</span><span class="StyleBodyTextIndent2ItalicChar">sfx</span>&nbsp;&nbsp;&nbsp; Any host beginning with <span class="StyleBodyTextIndent2ItalicChar">pfx</span> and ending with <span class="StyleBodyTextIndent2ItalicChar">sfx</span>.</p>
+
+<p class="StyleBodyTextIndent2Left05Hanging063">&nbsp;</p>
+
+<p class="StyleBodyTextIndent2ItalicLeft0" style="margin-left:.5in;text-indent:
+-.5in">name&nbsp;&nbsp;&nbsp; <span style="font-style:normal">An instance name (i.e., a name
+that can be specified using the <span class="StyleBodyTextIndent2BoldChar">–n</span>
+command line option). All directives until the next <b>else</b> or <span class="StyleBodyTextIndent2BoldChar">fi</span> are ignored unless the executable
+has been given one of the instance names in the list of names.</span></p>
+
+<p class="MsoBodyTextIndent2">&nbsp;</p>
+
+<p class="StyleBodyTextIndent2ItalicLeft0" style="margin-left:.5in;text-indent:
+-.5in">pgm&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-style:normal">The prefix-name of the
+executable. The prefix-name is defined to be all of the characters in the base
+filename (i.e., the directory path removed) up to but not including the first
+dot in the name, if any. If the name starts with a dot, the prefix-name is the
+complete base filename. All directives until the next <b>else</b> or <span class="StyleBodyTextIndent2BoldChar">fi</span> are ignored unless the executable
+has the given name.</span></p>
+
+<p class="MsoBodyTextIndent2">&nbsp;</p>
+
+<p class="StyleBodyTextIndent2ItalicLeft0" style="margin-left:.5in;text-indent:
+-.5in">var&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-style:normal">A set variable name or an
+environmental variable name, </span>varname<span style="font-style:normal">.&nbsp; “<b>?</b></span>varname<span style="font-style:normal">” refers to set variable; while “<b>?~</b></span>varname<span style="font-style:normal">” refers to an environmental variable. All directives
+until the next <b>else</b> or <span class="StyleBodyTextIndent2BoldChar">fi</span>
+are ignored unless one of the specified variables in the list of variables is
+defined. </span></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="StyleBodyTextIndent2Bold" style="margin-left:0in">Defaults</p>
+
+<p class="MsoBodyTextIndent2">None. At least one <span class="StyleBodyTextIndent2ItalicChar">hostpat</span>, <b>defined</b>, <span class="StyleBodyTextIndent2BoldChar">exec</span> or the <span class="StyleBodyTextIndent2BoldChar">named</span> keyword must be specified.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>&nbsp;</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Notes</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>All
+specified conditions must be true (i.e., <span class="StyleBodyTextIndent2ItalicChar">hostpat</span>, <b>defined</b>, <span class="StyleBodyTextIndent2BoldChar">exec</span>, and <span class="StyleBodyTextIndent2BoldChar">named</span>) for the subsequent directives
+to be used.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>A
+double ampersand (<b>&amp;&amp;</b>) is used to “and” two or more <i>named</i>
+tests. Be aware that the specified <i>named</i> tests must appear in the
+specific order (i.e. <b>defined</b> before <b>exec</b> and <b>exec</b> before <b>named</b>).</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>A
+qualified if is an <b>if</b> that is preceded by an else on the same line. An
+unqualified if is an <b>if</b> that appears first on a line.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">4)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Every
+unqualified <span class="StyleBodyTextIndent2BoldChar">if</span> must be followed
+by a <span class="StyleBodyTextIndent2BoldChar">fi</span>. Every <span class="StyleBodyTextIndent2BoldChar">fi </span>must be preceded by a qualified or
+unqualified <span class="StyleBodyTextIndent2BoldChar">if</span>.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">5)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Every
+<span class="StyleBodyTextIndent2BoldChar">else</span> must be preceded by a
+qualified or unqualified <span class="StyleBodyTextIndent2BoldChar">if</span>.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">6)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Nested
+unqualified <span class="StyleBodyTextIndent2BoldChar">if</span> directives are
+not allowed.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">7)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+name <span class="StyleBodyTextIndent2BoldChar">anon</span> refers to servers
+that were not given a name via <span class="StyleBodyTextIndent2BoldChar">–n</span>.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">8)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Some
+directives allow the “if” to be placed as the rightmost tokens on the
+associated directive line. For these directives, no “fi” is required as the end
+of the line determines the <span class="StyleBodyTextIndent2BoldChar">if</span>’s
+scope.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="StyleBodyTextIndent2Bold" style="margin-left:0in">Examples</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="font-family:&quot;Courier New&quot;">if *slac.stanford.edu named anon</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b><span style="font-family:
+&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp; xrd.port 9999</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b><span style="font-family:
+&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp; fi</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b><span style="font-family:
+&quot;Courier New&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in"><b><span style="font-family:&quot;Courier New&quot;">if named public&nbsp;&nbsp;&nbsp; </span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+8888</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">else</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+9999</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">fi&nbsp;&nbsp; </span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b><span style="font-family:
+&quot;Courier New&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in"><b><span style="font-family:&quot;Courier New&quot;">if exec cmsd &amp;&amp; named public </span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+2131</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">else</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+1094</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">fi</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">if exec
+cmsd &amp;&amp; named public</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+2131</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">else if
+exec cmsd &amp;&amp; named private</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+3121</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">else</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">xrd.port
+1094</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">fi</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">if
+defined ?~EXPORTPATH</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">set
+exportpath = $EXPORTPATH</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">else</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">set
+exportpath = /tmp</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">fi</span></b></p>
+
+<p class="MsoBodyTextIndent2"><b><span style="font-family:&quot;Courier New&quot;">all.export
+$exportpath</span></b></p>
+
+</div>
+
+<span class="StylePalatinoBold"><span style="font-size:12.0pt;font-weight:normal"><br clear="all" style="page-break-before:right">
+</span></span>
+
+<div class="WordSection5">
+
+<h1><a name="_Toc520499864">3<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Configuration File Continuation</a></h1>
+
+<p class="MsoPlainText">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><b><span style="font-size:12.0pt">continue </span></b><span style="font-size:12.0pt">[[<b>?</b>]<b>{</b><i>dirpath
+</i>|<i> filepath</i>]]<b> </b>[<i>sfx</i>] [<b>if</b> <i>spec</i>]</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><i><span style="font-size:12.0pt">sfx</span></i><span style="font-size:12.0pt">: <b>*</b><i>txt</i>
+[<i>sfx</i>]</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Function</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in">Specify the file(s) to continue the
+current configuration file.<span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">
+</span></p>
+
+<p class="StylePalatinoFirstline05"><span class="StylePalatino">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Parameters</span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.5in"><span class="StylePalatinoItalic">dirpath</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">the
+path to a directory holding additional configuration files. The directory is scanned
+for applicable files and each such file, in lexical order, is used to extend
+the current configuration file. Applicable files are those that</span></p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:63.0pt;text-indent:-.25in"><span class="StylePalatinoItalic"><span style="font-style:normal">a)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span class="StylePalatinoItalic"><span style="font-style:normal">do not start with a
+dot (.),</span></span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:63.0pt;text-indent:-.25in"><span class="StylePalatinoItalic"><span style="font-style:normal">b)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span class="StylePalatinoItalic"><span style="font-style:normal">are not marked as
+executable files, and</span></span></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:63.0pt;text-indent:-.25in"><span class="StylePalatinoItalic"><span style="font-style:normal">c)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span class="StylePalatinoItalic"><span style="font-style:normal">do not end with the
+historical suffixes of “.cfsaved”, “.rpmsave”, “.rpmnew”, “.dpkg-old”,
+“.dpkg-dist”, or “~” (i.e. tilde). </span></span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoItalic">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.5in"><span class="StylePalatinoItalic">filepath</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">the
+path to a file holding additional configuration directives. The file is used as
+an immediate continuation to the current configuration file. The file is
+acceptable as long as it does not have the execute bit set. </span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.2in"><span class="StylePalatinoItalic">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in;text-indent:-.3in"><span class="StylePalatinoItalic">sfx&nbsp;&nbsp; </span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">one
+or more file suffixes that are allowed to be continuations (files marked as
+executable are still ignored). &nbsp;This option is only meaningful when <i>dirpath</i>
+is specified.&nbsp; When <i>filepath</i> is specified, any specified valid suffix
+specifications are ignored. </span></p>
+
+<p class="MsoNormal" style="margin-left:.3in;text-indent:-.3in"><span class="StylePalatinoItalic">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in;text-indent:-.3in"><span class="StylePalatinoItalic">txt</span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">&nbsp;&nbsp; the
+characters that must appear at the end of the filename for the file to be
+considered applicable.</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in;text-indent:-.3in"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-left:.3in;text-indent:-.3in"><span class="StylePalatinoItalic">spec</span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">
+a valid <b>if </b>directive clause. The <b>continue</b> statement only applies
+if the clause evaluates to true.</span></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>&nbsp;</b></p>
+
+<b><span style="font-size:12.0pt;font-family:&quot;Times&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:always">
+</span></b>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Notes</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>A <b>continue</b>
+directive with no arguments simply continues the processing of the current
+configuration file. An empty argument list may occur due to variable
+substitution.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The <b>continue</b>
+directive is not allowed in a continuation (i.e., a continuation may not
+continue to another file).</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The <b>continue</b>
+directive may not appear in an <b>if-else-fi</b> clause. Use an inline <b>if</b>
+to control its applicability.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">4)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Continuations
+are particularly useful for defining a base configuration that allows site, VM
+or container specific augmentation.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">5)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Be
+very aware that component directives may be cumulative or replaceable. Refer to
+the specific directive that you wish to alter should it appear in an antecedent
+configuration file.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Example</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="font-family:&quot;Courier New&quot;">continue /etc/morecfg .cf .cfg .conf if named
+foobar</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><span style="font-family:
+&quot;Courier New&quot;">&nbsp;</span></p>
+
+<span style="font-size:12.0pt;font-family:&quot;Times&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:always">
+</span>
+
+<p class="MsoNormal" style="margin-left:.3in;text-indent:-.3in"><b><span style="font-size:16.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">&nbsp;</span></b></p>
+
+</div>
+
+<b><span style="font-size:16.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:right">
+</span></b>
+
+<div class="WordSection6">
+
+<h1><a name="_Toc520499865">4<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Using set Variables</a></h1>
+
+<h2><a name="_Toc520499866">4.1<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Assigning Variable Values</a></h2>
+
+<p class="MsoPlainText">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><b><span style="font-size:12.0pt">set </span></b><i><span style="font-size:12.0pt">var</span></i><b><span style="font-size:12.0pt"> </span></b><span style="font-size:12.0pt">{<b> = </b>{<b>
+</b><i>value </i>|<i> varname</i> } | &lt; <i>path </i>}</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><i><span style="font-size:12.0pt">varname</span></i><span style="font-size:12.0pt">: <b>$</b><i>envvar</i>
+| <b>$(</b><i>envvar</i><b>)</b> | <b>${</b><i>envvar</i><b>}</b> | <b>$[</b><i>envvar</i><b>]</b>
+</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Function</span></p>
+
+<p class="StylePalatinoFirstline05">Specify the value a set variable must have.</p>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Parameters</span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.5in"><span class="StylePalatinoItalic">var&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">The
+name of a variable. Variable names may only contain letters and digits and
+should start with a letter. Case is significant. Variable names may not be
+longer than 63 characters.</span></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2ItalicChar">value&nbsp;&nbsp;&nbsp; </span>The value to be assigned
+to the variable. It must consist of a single non-blank text token no longer
+than 511 characters.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2ItalicChar">path&nbsp;&nbsp;&nbsp;&nbsp; </span>The path to the file that
+contains the value to be assigned to the variable. The file must not be longer
+than 1023 characters.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><i>&nbsp;</i></p>
+
+<p class="StyleBodyTextIndent2Italic" style="margin-left:0in">varname</p>
+
+<p class="MsoBodyTextIndent2">The value comes from an environmental variable
+named <i>envvar</i>. The </p>
+
+<p class="MsoBodyTextIndent2">environmental variable must not be longer than 511
+characters. In most cases </p>
+
+<p class="MsoBodyTextIndent2">the environmental variable must be defined, as
+explained below. </p>
+
+<p class="MsoBodyTextIndent2"></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:.5in;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Specification</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Defined</b> <i>envvar</i></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Undefined</b> <i>envvar</i>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$</b><i>envvar</i></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$(</b><i>envvar</i><b>)</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>${</b><i>envvar</i><b>}</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$[</b><i>envvar</i><b>]</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Null string substituted</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>&nbsp;</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Notes</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Unless
+<b>$[</b><i>envvar</i><b>]</b> notation is used; use of an environmental
+variable that has not been set is considered to be a fatal error.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<b><span style="font-size:12.0pt;font-family:&quot;Times&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:always">
+</span></b>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Example</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="font-family:&quot;Courier New&quot;">set myVar = myToken</span></b></p>
+
+<p class="StyleBodyTextIndent2Bold"><span style="font-family:&quot;Courier New&quot;">set
+yourVar=$EnvVar</span></p>
+
+</div>
+
+<b><span style="font-size:14.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:right">
+</span></b>
+
+<div class="WordSection7">
+
+<h2><a name="_Toc520499867">4.2<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Substituting Variables</a></h2>
+
+<p class="MsoPlainText">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><i><span style="font-size:12.0pt">1<sup>st</sup>_token subs</span></i></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><i><span style="font-size:12.0pt">subs</span></i><span style="font-size:12.0pt">:&nbsp;&nbsp; [<i>vname</i>][<i>text</i>][<i>subs</i>]</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><i><span style="font-size:12.0pt">vname</span></i><span style="font-size:12.0pt">:&nbsp; <b>$</b><i>var</i>
+| <b>${</b><i>var</i><b>}</b> | <b>$(</b><i>var</i><b>) </b>|<b> $[</b><i>var</i><b>]</b></span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Function</span></p>
+
+<p class="StylePalatinoFirstline05">Specify a variable to be substituted by its
+set value.</p>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Parameters</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><i>1<sup>st</sup>_token </i></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2ItalicChar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The first token in any
+line of a configuration file. The first token may never specify a variable and
+is one of the following:</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:0in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span>A
+prefixed directive</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:0in"><span class="StyleBodyTextIndent2BoldChar"><span style="font-family:Symbol;font-weight:
+normal">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span></span><span class="StyleBodyTextIndent2BoldChar">if</span>, <span class="StyleBodyTextIndent2BoldChar">else</span>, or the token <span class="StyleBodyTextIndent2BoldChar">fi</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:0in"><span class="StyleBodyTextIndent2BoldChar"><span style="font-family:Symbol;font-weight:
+normal">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span></span><span class="StyleBodyTextIndent2BoldChar">set</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:0in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span><b>#</b>
+(indicating a comment)</p>
+
+<p class="StyleBodyTextIndent2Italic">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.5in"><span class="StylePalatinoItalic">text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">Any
+text.</span></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2ItalicChar">vname&nbsp; </span>The name of a set variable.
+The variable name ends when an non-alphanumeric character is encountered;
+including the of the line. The variable’s value replaces name, as follows:</p>
+
+<p class="MsoBodyTextIndent2">&nbsp;</p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:.5in;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Specification</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Defined</b> <i>var</i></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Undefined</b> <i>var</i>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$</b><i>var</i></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$(</b><i>var</i><b>)</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>${</b><i>var</i><b>}</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$[</b><i>var</i><b>]</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Null string substituted</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>&nbsp;</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Notes</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Except
+for <b>$[</b><i>var</i><b>]</b>; use of a variable that has not been set is
+considered to be a fatal error.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Variables
+may be used in any text line other than a <span class="StyleBodyTextIndent2BoldChar">set</span> statement.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Substitution
+occurs only once. Substituted lines are never rescanned.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<b><span style="font-size:12.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:always">
+</span></b>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Example</b></p>
+
+<p class="StyleBodyTextIndent2Bold"><span style="font-family:&quot;Courier New&quot;">set
+myHost = io.slac.stanford.edu</span></p>
+
+<p class="StyleBodyTextIndent2Bold"><span style="font-family:&quot;Courier New&quot;">set
+myPath = /foo/fum/fi/</span></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in"><b><span style="font-family:&quot;Courier New&quot;">&nbsp;</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in"><b><span style="font-family:&quot;Courier New&quot;">all.role manager if $myHost</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b><span style="font-family:
+&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp; ofs.fslib $(myPath)libXrdOfs.so</span></b></p>
+
+<b><span style="font-size:14.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:always">
+</span></b>
+
+<h2><a name="_Toc520499868">4.3<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Specifying set Options</a></h2>
+
+<p class="MsoPlainText">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><b><span style="font-size:12.0pt">set </span></b><span style="font-size:12.0pt">{ <b>-q</b>
+| <b>-v</b> | <b>-V</b> }</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Function</span></p>
+
+<p class="StylePalatinoFirstline05">Specify the level of substitution detail.</p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Parameters</span></p>
+
+<p class="StyleBodyTextIndentLeft0Hanging05"><span class="StyleBodyTextIndentBoldChar"><span lang="FR">-q</span></span><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i>Enables
+<span lang="FR">quiet mode. </span>Neither substitutions nor substituted lines
+are displayed.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2BoldChar"><span lang="FR">-v</span></span><span class="StyleBodyTextIndent2ItalicChar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Enables verbose<span lang="FR"> mode. </span>While substitutions are not displayed; substituted lines
+are displayed. This is the default.</p>
+
+<p class="MsoBodyTextIndent" style="margin-left:.5in;text-indent:-.5in"><b>&nbsp;</b></p>
+
+<p class="StyleBodyTextIndentLeft0Hanging05"><span class="StyleBodyTextIndentBoldChar"><span lang="FR">-V</span></span><i><span lang="FR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></i><span lang="FR">Enables very verbose mode. </span>Both
+substitutions and substituted lines are displayed.</p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Defaults</span></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in"><b>set -v</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>&nbsp;</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Notes</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Configuration
+files are processed by multiple components. Every time a component scans
+through a configuration file and “<span class="StyleBodyTextIndent2BoldChar">-v</span>”
+is in effect, substituted lines used by that component are displayed.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>When
+“<span class="StyleBodyTextIndent2BoldChar">-V</span>” is in effect, every time a
+variable is given a value the assignment is displayed. This means that each
+component scanning through the configuration file will generate a display of
+all <span class="StyleBodyTextIndent2BoldChar">set</span> statements.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Example</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="font-family:&quot;Courier New&quot;">set -V</span></b></p>
+
+<b><span style="font-size:14.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:always">
+</span></b>
+
+<h2><a name="_Toc520499869">4.4<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Assigning Environmental Variable Values</a> </h2>
+
+<p class="MsoPlainText">&nbsp;</p>
+
+<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><b><span style="font-size:12.0pt">setenv </span></b><i><span style="font-size:12.0pt">envvar</span></i><b><span style="font-size:12.0pt"> </span></b><span style="font-size:12.0pt">{<b> = </b>{<b>
+</b><i>value </i>|<i> varname</i> } | &lt; <i>path </i>}</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><span style="font-size:12.0pt">&nbsp;</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in"><i><span style="font-size:12.0pt">varname</span></i><span style="font-size:12.0pt">: <b>$</b><i>var</i>
+| <b>$(</b><i>var</i><b>)</b> | <b>${</b><i>var</i><b>}</b> | <b>$[</b><i>var</i><b>]</b>
+</span></p>
+
+<p class="MsoPlainText" style="text-indent:22.5pt;border:none;padding:0in">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Function</span></p>
+
+<p class="StylePalatinoFirstline05">Specify the value a environmental variable
+must have.</p>
+
+<p class="MsoNormal"><span class="StylePalatino">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StylePalatinoBold">Parameters</span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.5in"><span class="StylePalatinoItalic">envvar </span><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">The
+name of an environmental variable. Variable names may only contain </span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">letters
+and digits and should start with a letter. Case is significant. </span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">Environmental
+variable names may not be longer than 63 characters and may </span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;">not
+start with XRD. </span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2ItalicChar">value&nbsp;&nbsp;&nbsp; </span>The value to be assigned
+to the environmental variable. It must consist of a </p>
+
+<p class="MsoBodyTextIndent2">single non-blank text token no longer than 511
+characters. </p>
+
+<p class="MsoBodyTextIndent2"><i>&nbsp;</i></p>
+
+<p class="StyleBodyTextIndent2Italic" style="margin-left:0in">varname</p>
+
+<p class="MsoBodyTextIndent2">The value comes from a set variable named <i>var</i>.
+In most cases the set variable </p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in">must be
+defined, as explained below. </p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.5in"><span class="StyleBodyTextIndent2ItalicChar">path&nbsp;&nbsp;&nbsp;&nbsp; </span>The path to the file that
+contains the value to be assigned to the variable. The file must not be longer
+than 1023 characters.</p>
+
+<p class="MsoBodyTextIndent2">&nbsp;</p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:.5in;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Specification</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Defined</b> <i>envvar</i></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Undefined</b> <i>envvar</i>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$</b><i>var</i></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$(</b><i>var</i><b>)</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>${</b><i>var</i><b>}</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Fatal error </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="205" valign="top" style="width:153.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in"><b>$[</b><i>var</i><b>]</b></p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Definition substituted</p>
+  </td>
+  <td width="205" valign="top" style="width:153.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoBodyTextIndent2" style="margin-left:0in">Null string substituted</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>&nbsp;</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Notes</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:.75in;text-indent:-.25in">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Unless
+<b>$[</b><i>var</i><b>]</b> notation is used; use of an environmental variable
+that has not been set is considered to be a fatal error.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><b>Example</b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span style="font-family:&quot;Courier New&quot;">setenv EnvVar = myToken</span></b></p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in;text-indent:.5in"><b><span style="font-family:&quot;Courier New&quot;">set myPath = /foo/fum/fi/</span></b></p>
+
+<p class="StyleBodyTextIndent2Bold"><span style="font-family:&quot;Courier New&quot;">setenv
+EnvPath = $[myPath]</span></p>
+
+</div>
+
+<span style="font-size:12.0pt;font-family:&quot;Palatino Linotype&quot;,&quot;serif&quot;"><br clear="all" style="page-break-before:right">
+</span>
+
+<div class="WordSection8">
+
+<h1>5<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&nbsp;<a name="_Toc520499870"></a><a name="_Toc98765662"></a><a name="_Toc96935770">Document Change History</a></h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><span class="StyleBold">29 March 2007</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span lang="FR" style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="FR">Manual introduced.</span></p>
+
+<p class="MsoNormal"><span class="StyleBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StyleBold">8 January 2008</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Deprecate the <span class="StyleBodyTextIndent2BoldChar">odc</span>
+and <span class="StyleBodyTextIndent2BoldChar">olb</span> components.</p>
+
+<p class="MsoNormal"><span class="StyleBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StyleBold">23 June 2009</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Document the new “if/else if/else/fi” construct.</p>
+
+<p class="MsoNormal"><span class="StyleBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StyleBold">13 November 2010</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Document the new “<b>setenv</b>” construct. </p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Allow undefined variables to be used via the <b>$[] </b>construct.</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span class="StyleBold"><span style="font-family:Symbol;font-weight:normal">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Remove references to the <b>odc</b> and <b>olb</b>
+components. </p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span class="StyleBold"><span style="font-family:Symbol;font-weight:normal">·</span></span></p>
+
+<p class="MsoNormal"><span class="StyleBold">4 May 2014</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Document the new <b>defined</b> if-test construct.</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Add <b>http</b> as a component name.</p>
+
+<p class="MsoBodyTextIndent2" style="margin-left:0in"><span class="StyleBold"><span style="font-weight:normal">&nbsp;</span></span></p>
+
+<p class="MsoNormal"><span class="StyleBold">14 August 2015</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Add missing components to the component table (i.e. <b>dig</b>, <b>frm</b>,
+<b>pfc</b>, and <b>pss</b>).</p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Explain the use of the double ampersand.</p>
+
+<p class="MsoNormal"><span class="StyleBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StyleBold">27 July 2018</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Document the <b>continue</b> directive.</p>
+
+<p class="MsoNormal"><span class="StyleBold">&nbsp;</span></p>
+
+<p class="MsoNormal"><span class="StyleBold">6 April 2022</span></p>
+
+<p class="MsoBodyTextIndent2" style="text-indent:-.25in"><span style="font-family:
+Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Document that the <b>set</b> and <b>setenv</b> constructs can
+obtain the value from a file.</p>
+
+<p class="MsoHeader"><span style="font-family:&quot;Palatino&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+</div>
+
+
+
+
+<div id="bettercanvas-reminders" style="display: flex;"></div></body>
