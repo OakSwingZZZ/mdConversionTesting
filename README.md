@@ -1,5 +1,5 @@
 # XrootD Documentation Conversion to MD testing
-This repository provides an analysis and data on the performance of various LLMs in converting raw XrootD documentation. It provides you with multiple examples of code, scripts, and converted markdown documents.
+This repository is used to provide an analysis and data on the performance of various LLMs in converting raw XrootD documentation. It provides you with multiple examples of code, scripts, and converted markdown documents.
 
 > [!IMPORTANT]  
 > All testing was done on the second XrootD documentation that was available on the documentation website. A link is available to the original [here](https://xrootd.web.cern.ch/doc/dev55/Syntax_config.htm).
@@ -9,6 +9,7 @@ This repository provides an analysis and data on the performance of various LLMs
 - `ExamplesDoc` contains all the generated results and the original file.
 - `ExampleMPC` contains my *bad* code for an MPC file server taking advantage of a helpful NPM library. *Requires NPM*.
 - `scripts` contains the one Python script so far.
+- `RagSystem` contains an example RAG system for three documents using the GeminiAPI and Google GenAI SDK
 ___
 ## Potential Conversion Solutions: 
 
