@@ -212,11 +212,12 @@ class XrdConfigConverter(MarkdownConverter):
         # End Modification --------------------------------------------------------------------------
         return text
 
-# Initialize the converter and convert the HTML content to Markdown
-content = XrdConfigConverter(extensions=['markdown.extensions.tables', 'markdown.extensions.fenced_code'], strip=['a']).convert(html)
+if __name__ == "__main__":
+    # Initialize the converter and convert the HTML content to Markdown
+    content = XrdConfigConverter(extensions=['markdown.extensions.tables', 'markdown.extensions.fenced_code'], strip=['a']).convert(html)
 
-# Save the converted content to a markdown file path defined above
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(content)
+    # Save the converted content to a markdown file path defined above
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(content)
 
 
