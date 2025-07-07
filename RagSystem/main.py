@@ -5,6 +5,7 @@ import os
 import chromadb
 from pathlib import Path
 import hashlib
+import readline
 from IPython.display import Markdown
 from chromadb import Documents, EmbeddingFunction, Embeddings
 from langchain_text_splitters import CharacterTextSplitter
