@@ -62,7 +62,7 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
         )
         return response.embeddings[0].values
     
-def create_chroma_db(documents, name, client: genai.Client, model_id="text-embedding-004"):
+def create_chroma_db(documents, metadatas, name, client: genai.Client, model_id="text-embedding-004"):
     from chromadb.config import Settings
 
     chroma_client = chromadb.PersistentClient(
@@ -74,12 +74,12 @@ def create_chroma_db(documents, name, client: genai.Client, model_id="text-embed
         embedding_function=GeminiEmbeddingFunction(client, model_id)
     )
 
-    for d in documents:
-        doc_id = hash_doc(d)
+    for doc, meta in zip(documents, metadatas):
+        doc_id = hash_doc(doc)
         
         # Check if the ID already exists in the DB
         if not db.get(ids=[doc_id])["ids"]:
-            db.add(documents=[d], ids=[doc_id])  # embedding happens here
+            db.add(documents=[doc], ids=[doc_id], metadatas=[meta])  # embedding happens here
 
     return db
 
@@ -142,13 +142,23 @@ if __name__ == "__main__":
         print("No markdown files found in the documents directory.")
         exit(1)
     documents = []
-    '''text_splitter = CharacterTextSplitter(separator="\n", 
-                                      chunk_size=1000, 
-                                      chunk_overlap=100)'''
+    metadatas = []
+
     for path in paths:
-        contents = open(path, 'r').read()
-        if contents:
+        with open(path, 'r') as f:
+            contents = f.read()
+        # LOCATION TO ADD MORE METADATA!!
+        if contents.strip():
+            # Title could be the filename or extracted from the first Markdown heading
+            fileTitle = Path(path).stem  # e.g., "xrootd_config" from "xrootd_config.md"
+            # Optionally extract from content: e.g., first line that starts with '# '
+            title = None
+            for line in contents.splitlines():
+                if line.strip().startswith("# "):
+                    title = line.strip("# ").strip()
+                    break
             documents.append(contents)
+            metadatas.append({"document_title": title, "file_title": fileTitle})# More data added here!
     if documents.__len__() == 0:
         print("No documents found to embed.")
         exit(1)
@@ -162,7 +172,8 @@ if __name__ == "__main__":
         documents=documents,
         name="xrd_test",
         client=client,
-        model_id=chosen_model
+        model_id=chosen_model,
+        metadatas=metadatas
     )
     logic_loop(db, client)
     
