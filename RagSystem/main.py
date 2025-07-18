@@ -57,10 +57,16 @@ documents_dir = os.path.dirname(__file__) + "/documents"
 
 def start_mcp_server_in_background(chroma_dir, documents_dir, chosen_model, client):
     """
-    Starts the MCP server in a background thread to allow other operations to run concurrently.
+    Ensures the database setup is complete before starting the MCP server in a background thread.
     """
+    # Perform synchronous database setup
+    print("Setting up the database...")
+    server = start_mcp_server(chroma_dir, documents_dir, chosen_model, client)
+    print("Database setup complete.")
+
+    # Start the server in a background thread
     def run_server():
-        start_mcp_server(chroma_dir, documents_dir, chosen_model, client)
+        server.run(host="0.0.0.0", port=8000, transport="streamable-http")
 
     server_thread = threading.Thread(target=run_server, daemon=True)
     server_thread.start()

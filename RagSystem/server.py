@@ -8,7 +8,7 @@ import hashlib
 import readline
 from IPython.display import Markdown
 from chromadb import Documents, EmbeddingFunction, Embeddings
-from langchain_text_splitters import CharacterTextSplitter
+import tiktoken
 from fastmcp import FastMCP
 
 
@@ -57,7 +57,7 @@ def create_chroma_db(documents, metadatas, name, client: genai.Client, chroma_di
     )
 
     for doc, meta in zip(documents, metadatas):
-        doc_id = hash_doc(doc)
+        doc_id = hash_doc(doc, meta)
         
         # Check if the ID already exists in the DB
         if not db.get(ids=[doc_id])["ids"]:
@@ -68,12 +68,30 @@ def create_chroma_db(documents, metadatas, name, client: genai.Client, chroma_di
 def find_all_files(root_dir):
     return [str(path) for path in Path(root_dir).rglob('*.md') if path.is_file()]
 
-def hash_doc(doc: str) -> str:
-    return hashlib.sha256(doc.encode('utf-8')).hexdigest()
+def hash_doc(doc: str, metadata: dict) -> str:
+    """
+    Generate a unique hash for a document based on its content and metadata.
+    """
+    combined = doc + str(metadata)
+    return hashlib.sha256(combined.encode('utf-8')).hexdigest()
 
-def get_relevant_passage(query, db):
-        passage = db.query(query_texts=[query], n_results=1)['documents'][0][0]
+def get_relevant_passage(query, db, results=1):
+        passage = db.query(query_texts=[query], n_results=results)['documents'][0][0]
         return passage
+
+def split_text_with_tiktoken(text, chunk_size=512, chunk_overlap=100):
+    """
+    Splits text into chunks using TikToken with a specified chunk size and overlap.
+    """
+    encoding = tiktoken.get_encoding("cl100k_base")
+    tokens = encoding.encode(text)
+
+    chunks = []
+    for i in range(0, len(tokens), chunk_size - chunk_overlap):
+        chunk_tokens = tokens[i:i + chunk_size]
+        chunks.append(encoding.decode(chunk_tokens))
+
+    return chunks
 
 def start_mcp_server(chroma_dir, documents_dir, chosen_model, client):
     # Setup the documents
@@ -105,8 +123,13 @@ def start_mcp_server(chroma_dir, documents_dir, chosen_model, client):
                 if line.strip().startswith("# "):
                     title = line.strip("# ").strip()
                     break
-            documents.append(contents)
-            metadatas.append({"document_title": title, "file_title": fileTitle})  # More data added here!
+
+            # Split the document into chunks using TikToken
+            chunks = split_text_with_tiktoken(contents)
+            for chunk in chunks:
+                documents.append(chunk)
+                metadatas.append({"document_title": title, "file_title": fileTitle})
+
     if documents.__len__() == 0:
         print("No documents found to embed.")
         exit(1)
@@ -129,13 +152,15 @@ def start_mcp_server(chroma_dir, documents_dir, chosen_model, client):
     server = FastMCP()
 
     @server.tool
-    def get_relevant_passage_tool(query: str) -> str:
-        passage = get_relevant_passage(query, db)
+    def get_relevant_passage_tool(query: str, results: int = 1) -> str:
+        '''
+        Tool to retrieve relevant passage from the database on Xrootd. Change results to get more than one passage. 
+        '''
+        print(f"Received query: {query}, for tool: get_relevant_passage_tool")
+        passage = get_relevant_passage(query, db, results=results)
         return passage if passage else "No relevant passage found."
-    
-    server.run(host="0.0.0.0", port=8000, transport="streamable-http")
-    print("MCP server is running on http://0.0.0.0:8000")
-    return db
+
+    return server
 
 
 # if __name__ == "__main__":
