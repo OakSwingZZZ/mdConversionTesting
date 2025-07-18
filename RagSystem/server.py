@@ -1,4 +1,5 @@
 # Using the Google GenAI API
+import sys
 from google import genai
 from google.genai import types
 import os
@@ -10,6 +11,18 @@ from IPython.display import Markdown
 from chromadb import Documents, EmbeddingFunction, Embeddings
 import tiktoken
 from fastmcp import FastMCP
+
+def init_client():
+    """
+    Initializes the Google GenAI client.
+    """
+    try:
+        client = genai.Client()
+    except Exception as e:
+        print("Error initializing Google GenAI client. Please ensure that you have stored the API key in the environment variable GOOGLE_API_KEY.")
+        print(e)
+        exit(1)
+    return client
 
 
 def get_embedding_models(client):
@@ -163,11 +176,23 @@ def start_mcp_server(chroma_dir, documents_dir, chosen_model, client):
     return server
 
 
-# if __name__ == "__main__":
-#     # # Set up the Google GenAI client
-#     # client = init_client()
-#     # # Call the main function with the settings and client
-#     # main(chroma_dir, documents_dir, chosen_model, client)
+
+if __name__ == "__main__":
+    chosen_model = "text-embedding-004"
+    chroma_dir = os.path.dirname(__file__) + "/chroma_db"
+    documents_dir = os.path.dirname(__file__) + "/documents"
+
+    client = init_client()
+    server = start_mcp_server(chroma_dir, documents_dir, chosen_model, client)
+
+    arguments = sys.argv
+    print("Arguments passed to the script:", arguments)
+    if "--stdio" in arguments:
+        server.run(transport="stdio")
+    else:
+        server.run(host="0.0.0.0", port=8000, transport="streamable-http")
+    # http://localhost:8000/mcp/
+
 
 
 
